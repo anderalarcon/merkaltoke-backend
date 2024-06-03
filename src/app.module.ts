@@ -1,14 +1,18 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductsModule } from './products/products.module';
+import { ProductoModule } from './producto/producto.module';
 import { dataSourceOptions } from '../db/data-source';
-import { UserModule } from './user/user.module';
+import { EmpresaModule } from './empresa/empresa.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { CarritoModule } from './carrito/carrito.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
-    ProductsModule,
-    UserModule,
+    ProductoModule,
+    EmpresaModule,
+    ClienteModule,
+    CarritoModule,
   ],
 })
 export class AppModule { }
